@@ -26,10 +26,10 @@ async function selfTest() {
   // Run example pipeline
   const { PipelineEngine } = require("./pipeline-engine");
   const engine = new PipelineEngine(logger, client, {
-    maxDepth: 50,
+    maxDepth: 70,
     enableDLQ: true,
-    maxRetries: 1,
-    retryDelay: 500,
+    maxRetries: 3,
+    retryDelay: 1000,
     variables: {},
   });
 
