@@ -6,10 +6,10 @@ class PipelineEngine {
   constructor(logger, client, options = {}) {
     this.logger = logger;
     this.client = client;
-    this.maxDepth = options.maxDepth || 50;
+    this.maxDepth = options.maxDepth || 70;
     this.enableDLQ = options.enableDLQ !== false;
-    this.maxRetries = options.maxRetries || 3;
-    this.retryDelay = options.retryDelay || 1000;
+    this.maxRetries = options.maxRetries || 5;
+    this.retryDelay = options.retryDelay || 3000;
     this.variables = options.variables || {};
     this.dlq = [];
     this.stepMetrics = {};
